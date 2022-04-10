@@ -1,7 +1,7 @@
 # Friend Maker-Inator
 Bot that converses with the user
 
-This agent receives an input from the user via our Discord messaging channel. The agent then uses a keyword system to generate an appropriate output message. The output message is then sent to the user via the Discord channel.
+This agent receives an input from the user via any Discord messaging channel. The agent then uses a keyword system to generate an appropriate output message. The output message is then sent to the user via the Discord channel.
 
 # Individual Project - Karlen - New Features
 1. Google translator: The agent is able to receive an input string, then convert that string to the chosen language. This tool is useful if a user ever needs anything translated, it's simple and easily accessible through Discord. The user may indicate the chosen language that the string should be translated to giving it a conversationalist style.
