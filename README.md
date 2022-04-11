@@ -29,6 +29,9 @@ Required model for NameFinder: Download en-ner-person.bin from: http://opennlp.s
     
 # Demo Conversations
 
+
+<img width="379" src="https://cdn.discordapp.com/attachments/782402607393538061/962865447911440464/310proj_1.PNG">
+
 POS Tagging: The agent is able to identify the specific item that the user is talking about and delivers an involved response.
 
 <img width="379" src="https://user-images.githubusercontent.com/99511208/158702513-d25860e9-c6ce-43cc-9182-b5afecd0345b.png">
