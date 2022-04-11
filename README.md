@@ -6,7 +6,7 @@ This agent receives an input from the user via any Discord messaging channel. Th
 # Individual Project - Karlen - New Features
 1. Google translator: The agent is able to receive an input string, then convert that string to the chosen language. This tool is useful if a user ever needs anything translated, it's simple and easily accessible through Discord. The user may indicate the chosen language that the string should be translated to, giving it a conversationalist style.
 
-Google Translate setup: Using Google Scripts, I created a scrpit that would translate the given input string using Google API. Using this URL: https://script.google.com/macros/s/AKfycbwdB7XLqYLW3QJsHbTaAb0qmRRwqWrRhUnCtBBINbNur32hxUnpdNEX0aBhnMRYGH8g/exec allowed the Chatbot to converse with the google script.
+Google Translate setup: Using Google Scripts, I created a script that would translate the given input string using Google API. Using this URL: https://script.google.com/macros/s/AKfycbwdB7XLqYLW3QJsHbTaAb0qmRRwqWrRhUnCtBBINbNur32hxUnpdNEX0aBhnMRYGH8g/exec allowed the Chatbot to converse with the google script.
 
 2. Wikipedia API: The method allows the agent to attain information of a wikipedia page. The user is to specify which page they want information about, the bot will then search wikipedia for the given topic. This feature is great for adding more detail to a conversation, or generally if the user is curious about something or someone. 
 
