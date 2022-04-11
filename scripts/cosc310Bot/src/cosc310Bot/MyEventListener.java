@@ -25,26 +25,27 @@ public class MyEventListener extends ListenerAdapter{
 		MessageChannel channel = event.getChannel();
 		String prefix = "!";
 		
-		
+		if(!s.startsWith("!")) return;
 		
 		// NEW STUFF STARTS HERE
 				// break s into array of words
 		try {
+		/*
 				String[] split = s.split("((?=!)|(?<=!)|(?=,)|(?=\\.)|(\\s+))");
 				// run each word/punctuation through spellchecker
 				for(int i = 0; i < split.length; i++) {
 					//~~~TODO fix these 4 lines below~~~
 					//Spellchecker.text = split[i]; 
 						
-						
-						Spellchecker.check(split[i]); // set text in spellchecker
 						System.out.println(split[i]);
+						Spellchecker.check(split[i]); // set text in spellchecker
+						
 					
 					if(Spellchecker.result != null) // if Spellchecker returns new word
 						split[i] = Spellchecker.result; // replace array word with with corrected one
 					
 					
-					Thread.sleep(400);
+					Thread.sleep(334);
 				}
 				// put array back together into a string
 				String combine = "";
@@ -56,7 +57,7 @@ public class MyEventListener extends ListenerAdapter{
 				}
 				s = combine;
 				System.out.println(s);
-				
+				*/
 				
 				//KARLEN + CAM STUFF
 				
@@ -78,8 +79,8 @@ public class MyEventListener extends ListenerAdapter{
 				TokenNameFinderModel nameModel = null;
 				try {
 					//get models from local system
-					modelIn = new FileInputStream("/Users/zachprenovost/Downloads/opennlp-en-ud-ewt-pos-1.0-1.9.3.bin");
-					inputStreamNameFinder = new FileInputStream("/Users/zachprenovost/Downloads/en-ner-person.bin");
+					modelIn = new FileInputStream("C:\\Users\\Karlen\\Downloads\\opennlp-en-ud-ewt-pos-1.0-1.9.3.bin");
+					inputStreamNameFinder = new FileInputStream("C:\\Users\\Karlen\\Downloads\\en-ner-person.bin");
 				} catch (FileNotFoundException e1) {
 					e1.printStackTrace();
 				}
@@ -146,26 +147,35 @@ public class MyEventListener extends ListenerAdapter{
 						}
 					}
 				}
-		
-				for(var b=0; b <nouns.length; b++) {
-					System.out.println(""+nouns[b]);
-				}
+				
 				//Selects a random noun from the nouns array
-				int nounNum = (int) (Math.random()*k);
+				int nounNum = (int) (Math.random()*(k-1));
 				
 				//END
 		
 				if(s.startsWith(prefix)) {
 					int out = 0;
+					String name = s;
 					s = s.toLowerCase();
-					if (s.contains("who") && s.contains("are") && s.contains("?")) // "Who are you?"
+					if(s.contains("translate to") && s.contains(",")) {
+						out = 30;
+					}
+					else if(s.contains("translate")){
+						out = 31;
+					}
+					else if(s.contains("wiki,")) {
+						out = 33;
+					}
+					else if(s.contains("wiki")) {
+						out = 34;
+					}
+					else if (s.contains("who") && s.contains("are") && s.contains("?")) // "Who are you?"
 						out = 1;
 					else if (s.contains("how") && s.contains("you") && s.contains("?")) // "How are you?"
 						out = 2;
 					else if (s.contains("i like") || s.contains("i enjoy") || s.contains("i love") || s.contains("my favorite") && (s.contains(".") || s.contains("!"))) { //"I love skiing!"
 						out = 20;
-						if (s.contains("least") || s.contains("hate")) // "Least favorite food?"
-						out = 4;} 
+					}
 					else if ((s.contains("hobbies") || s.contains("hobby")) && s.contains("?")) // "Have any hobbies?"
 						out = 5;
 					else if (s.contains("sports") || s.contains("sport") && (s.contains("?") || s.contains("."))) { // "Favorite sport?"
@@ -198,9 +208,12 @@ public class MyEventListener extends ListenerAdapter{
 						if(s.contains("not")||s.contains("bad")) //"It's not good right now."
 							out = 19;
 					}
-					else if(s.contains("foods") || s.contains("food") || s.contains("snacks") && (s.contains("?") || s.contains(".")))// "Favorite food?"
+					else if(s.contains("foods") || s.contains("food") || s.contains("snacks") && (s.contains("?") || s.contains("."))){// "Favorite food?"
 		                out = 3;
-					else if(s.contains("live") || s.contains("in ") && (s.contains(".") || s.contains("!")))//"I live in Canada."
+						if (s.contains("least") || s.contains("hate")) // "Least favorite food?"
+							out = 4;
+					}
+					else if(s.contains("live in") && (s.contains(".") || s.contains("!")))//"I live in Canada."
 						out = 21;
 					else if(s.contains("thanks") || s.contains("thank you") && (s.contains(".") || s.contains("!")))//"Thank you friend bot."
 		                out = 22;
@@ -221,7 +234,7 @@ public class MyEventListener extends ListenerAdapter{
 					else if (s.contains("?")) // "What are your thoughts on the economic status of Norway?"
 						out = 29;
 					else	// "Blah blah blah."
-						out = 30;
+						out = 32;
 					
 					/* TESTING CODE
 					 	for(int i=0;i<nouns.length;i++) {
@@ -240,6 +253,7 @@ public class MyEventListener extends ListenerAdapter{
 					*/
 					
 					//output
+					System.out.println(k);
 					switch (out) {
 					case 1:
 						channel.sendMessage("I am Friend-Bot.").queue();
@@ -269,7 +283,7 @@ public class MyEventListener extends ListenerAdapter{
 					case 6:
 						String[] sports = { "cricket", "water polo", "hockey", "swimming", "skiing" };
 		                String sport = sports[(int) Math.round(Math.random()*4)];
-		                channel.sendMessage("My favourite sport is " + sport+"! What is yours?").queue();
+		                channel.sendMessage("My favorite sport is " + sport+"! What is yours?").queue();
 						break;
 					case 7:
 						channel.sendMessage("I'm not a fan of golf. It's a bit boring.").queue();
@@ -280,7 +294,7 @@ public class MyEventListener extends ListenerAdapter{
 					case 9:
 						String[] subjects = { "computer science.", "physical education.", "astronomy.", "molecular biology."};
 		                String subject = subjects[(int) Math.round(Math.random() * 3)];
-		                channel.sendMessage("My favourite subject is " + subject+" How about you?").queue();
+		                channel.sendMessage("My favorite subject is " + subject+" How about you?").queue();
 						break;
 					case 10:
 						channel.sendMessage("I'm not a fan of chemistry.").queue();
@@ -306,7 +320,7 @@ public class MyEventListener extends ListenerAdapter{
 					case 15:
 						String[] weathers = {"a bit chilly", "quite sunny", "pouring rain"};
 						String weather = weathers[(int)Math.round(Math.random()*2)];
-						channel.sendMessage("It's " +weather+" in the cloud right now.").queue();
+						channel.sendMessage("It's " +weather+" in the Metaverse right now.").queue();
 						break;
 					case 16:
 						String[] topics = {"sports", "food", "hobbies","school subjects","books","video games"};
@@ -398,7 +412,45 @@ public class MyEventListener extends ListenerAdapter{
 						channel.sendMessage("I dont know...").queue();
 						break;
 					case 30:
+						String lang = "";
+						if(s.contains("french")) {
+							lang = "fr";
+						}else if(s.contains("spanish")) {
+							lang = "es";
+						}else if(s.contains("german")) {
+							lang = "de";
+						}else if(s.contains("dutch")) {
+							lang = "nl";
+						}else if(s.contains("italian")) {
+							lang = "it";
+						}else {
+							lang = "fr";
+						}
+						
+						String split1 [] = s.split(",");
+						String message[] = split1[1].split(" ");
+						String newStr = "";
+						for(String words : message) {
+							if(!words.equals("translate")&&!words.equals("!")&&!words.equals("!translate")) {
+								newStr += words + " ";
+							}
+						}
+						channel.sendMessage(Translator.translate("en", lang, newStr)).queue();
+						
+						break;
+					case 31:
+						channel.sendMessage("To translate a sentence, use the format: !Translate to (language), (text to translate)").queue();
+						channel.sendMessage("The languages I can translate are: French, Spanish, German, Dutch, and Italian!").queue();
+						break;
+					case 32:
 						channel.sendMessage("I dont understand.").queue();
+						break;
+					case 33:
+						String split2 [] = name.split(",");
+						channel.sendMessage(wikipediaInfo.wiki(split2[1])).queue();
+						break;
+					case 34:
+						channel.sendMessage("To research someone, use the format: !wiki, (Name)").queue();
 						break;
 					}
 				}

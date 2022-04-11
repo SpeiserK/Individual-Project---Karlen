@@ -5,7 +5,7 @@ import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
 
-import com.google.gson.*;
+//import com.google.gson.*;
 import javax.net.ssl.HttpsURLConnection;
 
 
@@ -14,7 +14,7 @@ public class Spellchecker {
 	static String host = "https://api.bing.microsoft.com/";
 	static String path = "/v7.0/spellcheck";
 	
-	static String key = "81cbfb962852437180e90fb421863d36";
+	static String key = "12b10a2b99c84568b5d4490ec66301a8";
 	static String mkt = "en-GB";
 	static String mode = "proof";
 	public static String text = "creamm";
