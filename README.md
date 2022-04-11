@@ -4,7 +4,7 @@ Bot that converses with the user
 This agent receives an input from the user via any Discord messaging channel. The agent then uses a keyword system to generate an appropriate output message. The output message is then sent to the user via the Discord channel.
 
 # Individual Project - Karlen - New Features
-1. Google translator: The agent is able to receive an input string, then convert that string to the chosen language. This tool is useful if a user ever needs anything translated, it's simple and easily accessible through Discord. The user may indicate the chosen language that the string should be translated to giving it a conversationalist style.
+1. Google translator: The agent is able to receive an input string, then convert that string to the chosen language. This tool is useful if a user ever needs anything translated, it's simple and easily accessible through Discord. The user may indicate the chosen language that the string should be translated to, giving it a conversationalist style.
 
 Google Translate setup: Using Google Scripts, I created a scrpit that would translate the given input string using Google API. Using this URL: https://script.google.com/macros/s/AKfycbwdB7XLqYLW3QJsHbTaAb0qmRRwqWrRhUnCtBBINbNur32hxUnpdNEX0aBhnMRYGH8g/exec allowed the Chatbot to converse with the google script.
 
