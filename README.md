@@ -12,7 +12,7 @@ Google Translate setup: Using Google Scripts, I created a scrpit that would tran
 
 Wikipedia API setup: Using the jar file jsoup-1.14.3, the agent will be able to search wikipedia pages depending on user input. Jar file obtained from: https://jsoup.org/download
 
-# Individual Project - Karlen - Old Features
+# Individual Project - Karlen - Old Assignment 3 Features
 1. Switch statement keyword system: Our agent uses a keyword system to generate the appropriate output to send to the user. The keyword system is fitted with multiple topics, greetings, small-talk phrases, and reactions that can be used in the agent's output. We have even implemented some randomization when it comes to the agent's response, so that the conversation can always be unique.
 
 2. Parts of speech tagging Method: This method can identify the type of words used in the message sent by the user. Depending on the nouns used in the sentence the agent will respond with a more engaged output. This can make conversations more interesting and shows that the agent is trying to keep the conversation flowing.
