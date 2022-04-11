@@ -31,11 +31,11 @@ Required model for NameFinder: Download en-ner-person.bin from: http://opennlp.s
 
 Google Translate: The agent will prompt the user with translating format, once done it will translate any string.
 
-<img width="379" src="https://cdn.discordapp.com/attachments/782402607393538061/962865401711181944/310proj_2.PNG">
+<img width="379" src="https://cdn.discordapp.com/attachments/782402607393538061/962865447911440464/310proj_1.PNG">
 
 Wikipedia API: The agent is able to display information about the wikipedia page chosen, in this case, Ed Sheeran.
 
-<img width="379" src="https://cdn.discordapp.com/attachments/782402607393538061/962865447911440464/310proj_1.PNG">
+<img width="379" src="https://cdn.discordapp.com/attachments/782402607393538061/962865401711181944/310proj_2.PNG">
 
 POS Tagging: The agent is able to identify the specific item that the user is talking about and delivers an involved response.
 
